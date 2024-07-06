@@ -1,0 +1,5 @@
+Step 1> Create A record on the DNS server. In the pubic IP of the record put the public IP address of the machine requesting the certificate.
+
+Step 2> Use the below command:
+
+ sudo certbot certonly --standalone --agree-tos --preferred-challenges http -d <domain>
