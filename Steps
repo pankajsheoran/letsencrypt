@@ -3,3 +3,30 @@ Step 1> Create A record on the DNS server. In the pubic IP of the record put the
 Step 2> Use the below command:
 
  sudo certbot certonly --standalone --agree-tos --preferred-challenges http -d <domain>
+
+
+OR
+
+Step 1> Install snapd:
+
+sudo apt install snapd
+
+Step 2> Install Certbot:
+
+sudo snap install --classic certbot
+
+Step 3> Prepare Certbot command:
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+
+Step 4> Get certificate automatically:
+
+sudo certbot --apache
+
+	OR 
+	
+Get certificate manually:
+sudo certbot certonly --manual --preferred-challenges dns --debug-challenges -d "*.clicksolution.org"
+
+Step 5> Automatic renewal:
+
+sudo certbot renew --dry-run
